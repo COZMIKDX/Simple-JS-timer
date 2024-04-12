@@ -3,7 +3,7 @@ A simple timer class written in Javascript.
 
 I based this timer off of some tutorial I found on google, stuck it in a class, and added a few mildly helpful functions to get a bit of encapsulation in here.
 
-Basic Usage
+## Basic Usage
 To use this timer, you need to create an instance of the DynamicTimer class.
 Then create a function you would like to have executed when the timer goes off.
 Finally, run the startTimer method.
@@ -13,7 +13,7 @@ timer.setCallback(myFunction);
 timer.startTimer();
 ```
 
-Adjusting Interval Time
+## Adjusting Interval Time
 Use the setInterval method to change the timer interval any time after the DynamicTimer instance has been created.
 This include 
 For example, here is how you change the interval to 5 seconds.
