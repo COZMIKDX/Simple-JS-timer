@@ -5,6 +5,7 @@ class DynamicTimer {
         this.timerId = null;
         this.expectedTime = 0;
         this.callback = null;
+        this.driftCallback = null;
 
         this.timerTick = this.timerTick.bind(this);
     }
@@ -14,6 +15,10 @@ class DynamicTimer {
         if (drift > this.interval) {
             // Took too long. Do anything needed to make up for being late.
             console.log("Drift detected");
+            if (this.driftCallback != null)
+            {
+              this.driftCallback();
+            }
         } else { 
           // Normal on-time behaviour
           this.callback();
@@ -40,6 +45,10 @@ class DynamicTimer {
     
     setCallback(callback) {
       this.callback = callback;
+    }
+
+    setDriftCallback(callback) {
+      this.driftCallback = callback;
     }
   
   setInterval(interval) {
