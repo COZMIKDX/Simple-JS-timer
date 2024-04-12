@@ -5,7 +5,8 @@ I based this timer off of some tutorial I found on google, stuck it in a class, 
 
 ## Basic Usage
 To use this timer, you need to create an instance of the DynamicTimer class.
-Then create a function you would like to have executed when the timer goes off.
+Next, create a callback function you would like to have executed when the timer goes off.
+You must create a callback for the timer to start.
 Finally, run the startTimer method.
 ```js
 function myTimerCallback()) {
