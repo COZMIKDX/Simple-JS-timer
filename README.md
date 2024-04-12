@@ -8,6 +8,10 @@ To use this timer, you need to create an instance of the DynamicTimer class.
 Then create a function you would like to have executed when the timer goes off.
 Finally, run the startTimer method.
 ```js
+function myFunction() {
+  console.log("Time is up!");
+}
+
 let timer = new DynamicTimer(1000);
 timer.setCallback(myFunction);
 timer.startTimer();
@@ -35,7 +39,8 @@ slider.addEventListener("input", () => {
   timer.stopTimer();
   timer.setInterval(Number(slider.value));
   timer.startTimer();
-});
+  }
+);
 ```
 
 You may wish to write a function to convert some time unit to milliseconds such as this:
@@ -46,5 +51,22 @@ function minuteToMillisec(minutes) {
 ```
 Consider forking this repo to create your own personalized timer kit.
 
-Timers may not go off exactly when intended. For that reason, the class provides the option to run your own code to perform
+## Timer Drift
+Timers may not go off exactly when intended. For that reason, this timer provides the option to run your own code to perform
 whatever you may need to do to make up for the drift.
+
+Like with the timer callback, you can create a drift callback that is set in a similar way.
+```JS
+function myFunction() {
+  console.log("Time is up!");
+}
+
+function myDriftCallback() {
+  console.log("Drift detected!");
+}
+
+let timer = new DynamicTimer(1000);
+timer.setCallback(myFunction);
+timer.setDriftCallback(myDriftFunction);
+timer.startTimer();
+```
