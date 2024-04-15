@@ -1,11 +1,11 @@
 class DynamicTimer {
   // interval is in milliseconds.
-  constructor(interval) {
+  constructor(interval, callback = null, driftCallback = null) {
       this.interval = interval;
       this.timerId = null;
       this.expectedTime = 0;
-      this.callback = null;
-      this.driftCallback = null;
+      this.callback = callback;
+      this.driftCallback = driftCallback;
 
       this.timerTick = this.timerTick.bind(this);
   }
