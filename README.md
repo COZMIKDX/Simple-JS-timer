@@ -13,8 +13,7 @@ function myTimerCallback()) {
   console.log("Time is up!");
 }
 
-let timer = new DynamicTimer(1000);
-timer.setCallback(myTimerCallback);
+let timer = new DynamicTimer(1000, myTimerCallback, null);
 timer.startTimer();
 ```
 
@@ -65,8 +64,6 @@ function myDriftCallback() {
   console.log("Drift detected!");
 }
 
-let timer = new DynamicTimer(1000);
-timer.setCallback(myTimerCallback);
-timer.setDriftCallback(myDriftFunction);
+let timer = new DynamicTimer(1000, myTimerCallback, myDriftCallback);
 timer.startTimer();
 ```
