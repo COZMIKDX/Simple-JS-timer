@@ -1,7 +1,7 @@
 # Simple-JS-timer
 A simple timer class written in Javascript.
 
-I based this timer off of some tutorial I found on google (I'll link to it if I find it again), stuck it in a class, and added a few mildly helpful functions to get a bit of encapsulation in here.
+I based this timer off of some tutorial I found on google (I'll link to it if I find it again), stuck it in a class, and added a few mildly helpful functions.
 
 ## Basic Usage
 To use this timer, you need to create an instance of the DynamicTimer class.
